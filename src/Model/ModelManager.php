@@ -550,7 +550,16 @@ class ModelManager implements ModelManagerInterface
      */
     protected function camelize($property)
     {
-        return preg_replace(['/(^|_)+(.)/e', '/\.(.)/e'], ["strtoupper('\\2')", "'_'.strtoupper('\\1')"], $property);
+        // return preg_replace(['/(^|_)+(.)/e', '/\.(.)/e'], ["strtoupper('\\2')", "'_'.strtoupper('\\1')"], $property);
+
+        return preg_replace_callback_array([
+            '/(^|_)+(.)/' => function ($matches) {
+                return strtoupper($matches[2]);
+            },
+            '/\.(.)/' => function ($matches) {
+                return '_'.strtoupper($matches[1]);
+            }
+        ], $property);
     }
 
     private function isFieldAlreadySorted(FieldDescriptionInterface $fieldDescription, DatagridInterface $datagrid): bool

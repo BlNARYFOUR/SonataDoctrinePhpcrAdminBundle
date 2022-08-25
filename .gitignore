@@ -5,6 +5,7 @@
 /build/
 /node_modules/
 /vendor/
+/.idea/
 .php-cs-fixer.cache
 composer.lock
 phpunit.xml
