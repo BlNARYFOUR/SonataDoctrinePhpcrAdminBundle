@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Sonata\DoctrinePHPCRAdminBundle;
 
-use Sonata\CoreBundle\Form\FormHelper;
+use Sonata\DoctrinePHPCRAdminBundle\Form\FormHelper;
 use Sonata\DoctrinePHPCRAdminBundle\DependencyInjection\Compiler\AddGuesserCompilerPass;
 use Sonata\DoctrinePHPCRAdminBundle\DependencyInjection\Compiler\AddTemplatesCompilerPass;
 use Sonata\DoctrinePHPCRAdminBundle\DependencyInjection\Compiler\AddTreeBrowserAssetsPass;
